@@ -1,0 +1,217 @@
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0e1014;
+  --panel: #151920;
+  --panel-2: #1b2029;
+  --panel-3: #232a35;
+  --border: #2a313d;
+  --text: #e7eaf0;
+  --text-dim: #9aa3b2;
+  --text-faint: #6b7483;
+  --accent: #f59e0b;
+  --accent-text: #1a1204;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --focus: #fbbf24;
+  --playhead: #fafafa;
+  --kbd-bg: #2a313d;
+  --kbd-text: #c9d0dc;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+
+  --emo-positive: #22c55e;
+  --emo-neutral: #3b82f6;
+  --emo-angry: #ef4444;
+  --emo-sad: #a855f7;
+  --emo-unclear: #8b93a1;
+  --emo-none: #4a5262;
+
+  --role-consultant: #fde047;
+  --role-client: #67e8f9;
+  --role-unclear: #9ca3af;
+
+  --tl-bg: #0e1014;
+  --tl-wave-bg: #12161c;
+  --tl-wave: #aab4c3;
+  --tl-wave-loading: #3a4250;
+  --tl-grid: #3a4250;
+  --tl-ruler-bg: #171b22;
+  --tl-hover: rgba(255, 255, 255, 0.35);
+  --tl-lane-bg: #10131a;
+  --tl-trans-bg: #13171e;
+  --tl-trans-block: #252c38;
+  --tl-trans-text: #b9c1ce;
+  --tl-trans-active: #3a4558;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #eef0f3;
+  --panel: #ffffff;
+  --panel-2: #f5f6f8;
+  --panel-3: #e9ecf0;
+  --border: #d5dae1;
+  --text: #1a1e24;
+  --text-dim: #586172;
+  --text-faint: #8a93a3;
+  --accent: #d97706;
+  --accent-text: #ffffff;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --focus: #d97706;
+  --playhead: #111418;
+  --kbd-bg: #e3e7ec;
+  --kbd-text: #3a4250;
+  --shadow: 0 8px 28px rgba(20, 30, 50, 0.18);
+
+  --emo-positive: #16a34a;
+  --emo-neutral: #2563eb;
+  --emo-angry: #dc2626;
+  --emo-sad: #9333ea;
+  --emo-unclear: #6b7280;
+  --emo-none: #9aa3b2;
+
+  --role-consultant: #ca8a04;
+  --role-client: #0891b2;
+  --role-unclear: #6b7280;
+
+  --tl-bg: #f7f8fa;
+  --tl-wave-bg: #ffffff;
+  --tl-wave: #4b5563;
+  --tl-wave-loading: #c9ced6;
+  --tl-grid: #c9ced6;
+  --tl-ruler-bg: #eef0f3;
+  --tl-hover: rgba(0, 0, 0, 0.3);
+  --tl-lane-bg: #f1f3f6;
+  --tl-trans-bg: #f4f5f7;
+  --tl-trans-block: #e2e6eb;
+  --tl-trans-text: #374151;
+  --tl-trans-active: #c7d2e3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif;
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: var(--panel-3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--text-faint);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+button.ghost {
+  background: transparent;
+  border-color: transparent;
+}
+
+button.ghost:hover:not(:disabled) {
+  background: var(--panel-3);
+}
+
+button.danger {
+  color: var(--danger);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+kbd {
+  font: 600 10.5px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--kbd-bg);
+  color: var(--kbd-text);
+  border-radius: 4px;
+  padding: 2px 4px;
+  min-width: 16px;
+  text-align: center;
+  display: inline-block;
+}
+
+.dim {
+  color: var(--text-dim);
+}
+
+.faint {
+  color: var(--text-faint);
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--panel-3);
+  border-radius: 5px;
+  border: 2px solid var(--panel);
+}

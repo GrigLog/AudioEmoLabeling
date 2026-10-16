@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.claude
+
+# Recordings and their transcripts are large and usually private — never commit them.
+*.wav
+*.WAV
+transcript_*.json
+*.labels.json
